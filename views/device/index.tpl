@@ -1,0 +1,1 @@
+E:\githubstore\2021_backend_dash\go\hellobeego/views/device/index.tpl
