@@ -1,0 +1,119 @@
+Case Name:Account_Mode_Outbound_Call
+Case Number:18
+Case Loop:2
+Mac Address:c0:74:ad:2c:8b:7c
+Phone Model:GRP2616
+
+***************Device Pvalue Infomation***********
+
+	P26084 = "test2"	P134 = "test"	P2389 = "1"
+	P8349 = "2"	P337 = "http://192.168.92.45:88/public/xmlapp/XMLTest.xml"	P352 = "XMLApp"
+	P8367 = ""	P8368 = "0"	P323 = "6"
+	P301 = "0"	P303 = ""	P1591 = "http://xsp1.tekvizion.com"
+	P2937 = ""	P1593 = "9725552028@as.tekvizion.com"	P271 = "1"
+	P270 = ""	P401 = "1"	P417 = ""
+	P501 = "1"	P517 = "Testing My Name"	P8369 = "2"
+	P2304 = "0"	P1310 = "0"	P78 = "0"
+	P184 = "0"	P8488 = "1"	P90 = "0"
+	P1341 = "0"	P1376 = "1"	P1468 = "1023"
+	P1366 = "1"	P1365 = "31"	P29609 = "0"
+	P191 = "1"	P91 = "0"	P26063 = "0"
+	P419 = ""	P8446 = "0"	P1565 = "2"
+	P8353 = "0"	P302 = ""	P9905 = "0"
+	P57 = "0"	P6765 = "0"	P290 = "{ x+ | \+x+ | *x+ | *xx*x+ }"
+	P2382 = "Mpk"	P6758 = "0"	P182 = "0"
+	P66 = ""	P29 = "0"	P32063 = "1"
+	P1362 = "en"	P1526 = "0"	P29092 = ""
+	P130 = "0"	P6760 = "0"	P8372 = "0"
+	P8361 = "1"	P338 = "0"	P422 = "0"
+	P519 = ""	P522 = "0"	P619 = ""
+	P622 = "0"	P719 = ""	P722 = "0"
+	P819 = ""	P822 = "0"	P85 = "4"
+	P25063 = "1"	P2918 = "1"	P2919 = "3"
+	P1382 = "0"	P8384 = "0"	P8350 = "0"
+	P8351 = "5"	P8393 = "1"	P26006 = "1"
+	P1357 = "0"	P1312 = "0"	P330 = "1"
+	P311 = ""	P26049 = ""	P26050 = "0"
+	P26047 = "0"	P8466 = "1"	P8474 = "1"
+	P72 = "1"	P2928 = "BTPhonebook,BTOnOff,EndCall,ReConf,ConfRoom,Custom-Confcall,Cancel,NewCall,Swap,Transfer,Trnf>VM,DialDTMF,BSCCenter,URecord,Record,UCallPark,PrivateHold,CallPark"	P2923 = "0"
+	P2356 = "test"	P298 = "1"	P26071 = "0"
+	P26072 = "1"	P26019 = "1"	P3482 = "1"
+	P8383 = "1"	P8385 = "110,120,119"	P8020 = ""
+	P22362 = "1"	P6766 = "0"	P29612 = "0"
+	P22381 = "1"	P1363 = "31"	P1466 = ""
+	P1364 = "0"	P1311 = "0"	P2318 = ""
+	P6764 = "0"	P26060 = "250"	P8461 = "0"
+	P188 = "0"	P22162 = "1"	P324 = "0"
+	P305 = ""	P325 = "0"	P308 = ""
+	P326 = "0"	P327 = "0"	P314 = ""
+	P306 = "1032,1234"	P304 = "0"	P307 = "0"
+	P309 = "1032,1234"	P310 = "0"	P312 = "1032,1234"
+	P313 = "0"	P315 = "1032,1234"	P317 = ""
+	P316 = "0"	P328 = "0"	P318 = "1032,1234"
+	P319 = "0"	P320 = ""	P329 = "0"
+	P321 = "1032,1234"	P353 = "0"	P354 = "0"
+	P355 = ""	P356 = "1032,1234"	P8381 = "0"
+	P1369 = ""	P1472 = ""	P1367 = "31"
+	P1470 = ""	P1569 = ""	P1467 = ""
+	P8388 = "4"	P71 = ""	P1487 = "0"
+	P1485 = "30"	P26062 = "0"	P1314 = "1"
+	P32051 = "0"	P32052 = "any"	P601 = "1"
+	P701 = "1"	P801 = "1"	P31 = "1"
+	P288 = "1"	P29090 = "1"	P26059 = "1"
+	P2339 = "0"	P198 = "100"	P2338 = "0"
+	P2359 = "1"	P63 = "0"	P2397 = "1"
+	P2398 = "30"	P2395 = "1"	P260 = "90"
+	P262 = "1"	P264 = "1"	P26061 = "1"
+	P183 = "0"	P2920 = "0"	P2301 = "0"
+	P2302 = "1"	P2303 = "0"	P32 = "60"
+	P2324 = "0"	P1339 = "0"	P8390 = "2"
+	P8489 = "1"	P8490 = "1"	P8496 = "1"
+	P8497 = "1"	P8491 = "1"	P8316 = "www.qq.com/opendnd"
+	P32062 = "1"	P8313 = "www.qq.com/established"	P8310 = "www.qq.com/incoming"
+	P8312 = "www.qq.com/missed"	P8324 = "www.qq.com/hold"	P8317 = "www.qq.com/closeddnd"
+	P8311 = "www.qq.com/outgoing"	P8325 = "www.qq.com/unhold"	P8314 = "www.qq.com/terminated"
+	P81 = "0"	P1525 = ""	P8358 = ""
+	P26094 = "192.168.77.81"	P2392 = "1"	P47 = "192.168.77.80"
+	P2312 = "192.168.77.80"	P1345 = "0"	P1371 = ""
+	P1373 = ""	P1438 = "0"	P22134 = "0"
+	P2344 = ""	P2345 = ""	P26149 = ""
+	P26150 = "0"	P26163 = "0"	P26263 = "0"
+	P26363 = "0"	P26463 = "0"	P26563 = "0"
+	P29093 = ""	P29094 = ""	P411 = "0"
+	P448 = "0"	P46 = "2"	P492 = "1"
+	P511 = "0"	P58 = "8"	P59 = "4"
+	P592 = "1"	P60 = "18"	P61 = "9"
+	P611 = "0"	P62 = "98"	P692 = "1"
+	P98 = "123"	P234 = ""	P235 = ""
+
+
+**************Device Case Pvalue Requirement***************
+
+   Set Pvalue P8369 to value: "2"
+
+
+*******************************************************
+
+
+[04/28 19:40:53 103916][192.168.77.83 API] API:Init temp 
+	 Source: http://192.168.77.83/cgi-bin/api-request_init_phone_status?passcode=123
+
+
+04/28 19:41:13####### Error Happend!! info:File: ../lib/initialize, API:Init temp  [device1]
+
+
+[04/28 19:41:13 136138][192.168.77.83 API] API:DownloadSI temp siName 
+	 Source: http://192.168.77.83/cgi-bin/api-download_system_info?passcode=123
+
+
+[04/28 19:41:23 147770][192.168.77.83 API] API:Capture temp tempName 
+	 Source: http://192.168.77.83/cgi-bin/api-capture_screen?passcode=123
+
+
+[04/28 19:41:56 172309][192.168.77.83 API] API:PhoneEnd temp 
+	 Source: http://192.168.77.83/cgi-bin/api-phone_operation?passcode=123&cmd=endcall
+
+
+[04/28 19:42:16 684240][192.168.77.83 API] API:Reset temp 
+	 Source: http://192.168.77.83/cgi-bin/api-back_idle?passcode=123
+

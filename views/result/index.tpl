@@ -22,5 +22,8 @@
                 </div>
             </div>
         </header>
+        {{range $ind, $elem := .json}}
+        <p>{{$elem}}</p>
+        {{end}}
     </body>
 </html>
