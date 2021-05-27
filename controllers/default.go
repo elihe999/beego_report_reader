@@ -60,11 +60,14 @@ func (c *MainController) getResultText() {
 		if err := json.Unmarshal([]byte(value), &someContext); err == nil {
 			// fmt.Println(someContext)
 			if someContext.Type != "If" && someContext.Type != "While" && someContext.Type != "Var" && someContext.Type != "Foreach" {
+				if someContext.Type == "Screenshot" {
+					someContext.Details = "<img src=\"static/" + someContext.Details + "\" />"
+				}
 				mapInterface[index] = someContext
 			}
 			// json.Unmarshal(js, &m)
 		} else {
-			// fmt.Println(err)
+			// fmt.Println("getResultText:", err)
 		}
 	}
 	c.Data["json"] = mapInterface
