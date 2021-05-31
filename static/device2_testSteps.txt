@@ -1,0 +1,69 @@
+Case Name:Account_Mode_Outbound_Call
+Case Number:18
+Case Loop:2
+Mac Address:c0:74:ad:2c:8b:3e
+Phone Model:GRP2616
+
+***************Device Pvalue Infomation***********
+
+	P1310 = "0"	P78 = "0"	P129 = "1"
+	P1376 = "1"	P57 = "0"	P1362 = "en"
+	P130 = "0"	P1565 = "2"	P8446 = "0"
+	P8466 = "1"	P26047 = "0"	P40 = "5060"
+	P8369 = "1"	P298 = "1"	P191 = "1"
+	P1364 = "0"	P1363 = "31"	P1466 = ""
+	P303 = ""	P302 = ""	P301 = "0"
+	P323 = "-1"	P8381 = "0"	P1569 = ""
+	P63 = "0"	P183 = "0"	P58 = "8"
+	P59 = "4"	P60 = "18"	P61 = "9"
+	P62 = "98"	P46 = "2"	P98 = "123"
+	P1311 = "0"	P1312 = "0"	P1341 = "0"
+	P1345 = "0"	P1357 = "0"	P1365 = "31"
+	P1366 = "1"	P1367 = "31"	P1369 = ""
+	P1371 = ""	P1373 = ""	P1382 = "0"
+	P1438 = "0"	P1526 = "0"	P198 = "100"
+	P22134 = "0"	P2304 = "0"	P2318 = ""
+	P2344 = ""	P2345 = ""	P2382 = "Mpk"
+	P26049 = ""	P26050 = "0"	P26063 = "0"
+	P26149 = ""	P26150 = "0"	P26163 = "0"
+	P26263 = "0"	P26363 = "0"	P26463 = "0"
+	P26563 = "0"	P270 = ""	P271 = "1"
+	P29 = "0"	P290 = "{ x+ | \+x+ | *x+ | *xx*x+ }"	P29092 = ""
+	P29093 = ""	P29094 = ""	P2923 = "0"
+	P2928 = "BTPhonebook,BTOnOff,EndCall,ReConf,ConfRoom,Custom-Confcall,Cancel,NewCall,Swap,Transfer,Trnf>VM,DialDTMF,BSCCenter,URecord,Record,UCallPark,PrivateHold,CallPark"	P31 = "1"	P401 = "1"
+	P411 = "0"	P417 = ""	P419 = ""
+	P422 = "0"	P448 = "0"	P47 = "192.168.77.80"
+	P492 = "1"	P501 = "1"	P511 = "0"
+	P592 = "1"	P601 = "1"	P611 = "0"
+	P66 = ""	P6765 = "0"	P692 = "1"
+	P701 = "1"	P72 = "1"	P801 = "1"
+	P81 = "0"	P8351 = "5"	P8353 = "0"
+	P8384 = "0"	P90 = "0"	P91 = "0"
+	P234 = ""	P235 = ""
+
+**************Device Case Pvalue Requirement***************
+
+	No Pvalue Config Requirement Fond in This Case
+
+
+*******************************************************
+
+
+04/28 19:41:13####### Error Happend!! info:File: ../lib/initialize, API:Init temp  [device1]
+
+
+[04/28 19:41:43 160654][192.168.77.61 API] API:DownloadSI temp siName 
+	 Source: http://192.168.77.61/cgi-bin/api-download_system_info?passcode=123
+
+
+[04/28 19:41:53 172475][192.168.77.61 API] API:Capture temp tempName 
+	 Source: http://192.168.77.61/cgi-bin/api-capture_screen?passcode=123
+
+
+[04/28 19:42:36 695411][192.168.77.61 API] API:PhoneEnd temp 
+	 Source: http://192.168.77.61/cgi-bin/api-phone_operation?passcode=123&cmd=endcall
+
+
+[04/28 19:42:37 200326][192.168.77.61 API] API:Reset temp 
+	 Source: http://192.168.77.61/cgi-bin/api-back_idle?passcode=123
+

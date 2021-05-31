@@ -1,0 +1,57 @@
+{"type":"System","desc":"Test Start Time","info":"2021/04/28 19:40:53","details":"","status":"OKAY","time":"00:00:00:000"}
+{"type":"Run","desc":" ","info":"Run \"../lib/initialize\" deviceList ","details":"","status":"OKAY","time":"00:00:00:000"}
+{"type":"Var","desc":" ","info":"Var contain true ","details":"","status":"OKAY","time":"00:00:00:000"}
+{"type":"Var","desc":" ","info":"Var error_flag false ","details":"","status":"OKAY","time":"00:00:00:000"}
+{"type":"Var","desc":" ","info":"Var num 0 ","details":"","status":"OKAY","time":"00:00:00:000"}
+{"type":"Var","desc":" ","info":"Var picName \"Error picture\" ","details":"","status":"OKAY","time":"00:00:00:000"}
+{"type":"Foreach","desc":" ","info":"Foreach deviceList as temp ","details":"start Foreach statement","status":"OKAY","time":"00:00:00:000"}
+{"type":"API","desc":"[device1] ","info":"File: ../lib/initialize, API:Init temp  [device1]","details":"192.168.77.83 :: curl_easy_perform() failed: Timeout was reached","status":"ERROR","time":"00:00:20:001"}
+{"type":"Foreach","desc":" ","info":"Foreach deviceList as temp ","details":"start End of statement","status":"OKAY","time":"00:00:20:022"}
+{"type":"System","desc":"","info":"<h1>--Error Process Start--</h1>","details":"","status":"OKAY","time":"00:00:20:032"}
+{"type":"Foreach","desc":" ","info":"Foreach deviceList as temp ","details":"start Foreach statement","status":"OKAY","time":"00:00:20:032"}
+{"type":"Number","desc":" ","info":"Number:Add num 1 ","details":"","status":"OKAY","time":"00:00:20:032"}
+{"type":"Var","desc":" ","info":"Var tempName picName ","details":"","status":"OKAY","time":"00:00:20:032"}
+{"type":"Var","desc":" ","info":"Var siName \"SystemInfo_\" ","details":"","status":"OKAY","time":"00:00:20:032"}
+{"type":"Var","desc":" ","info":"Var str \"\" ","details":"","status":"OKAY","time":"00:00:20:032"}
+{"type":"String","desc":" ","info":"String:Transform str num ","details":"","status":"OKAY","time":"00:00:20:032"}
+{"type":"String","desc":" ","info":"String:Append tempName str ","details":"","status":"OKAY","time":"00:00:20:032"}
+{"type":"String","desc":" ","info":"String:Append siName str ","details":"","status":"OKAY","time":"00:00:20:032"}
+{"type":"API","desc":"[device1] ","info":"File: #Error, API:DownloadSI temp siName  [device1]","details":"curl_easy_perform() failed: Timeout was reached","status":"ERROR","time":"00:00:30:044"}
+Pause 1000 1619610083 00:00:30:044
+{"type":"Var","desc":" ","info":"contain true ","details":"","status":"OKAY","time":"00:00:30:044"}
+{"type":"API","desc":"[device1] ","info":"File: #Error, API:Capture temp tempName  [device1]","details":"curl_easy_perform() failed: Timeout was reached","status":"ERROR","time":"00:00:40:055"}
+Pause 1000 1619610093 00:00:40:055
+{"type":"While","desc":" ","info":"While contain:","details":"start while statement","status":"OKAY","time":"00:00:40:055"}
+{"type":"CoreDump","desc":"","info":"c0:74:ad:2c:8b:7c not found core dump","details":"","status":"OKAY","time":"00:00:50:056"}
+{"type":"If","desc":" ","info":"If contain:","details":"false","status":"OKAY","time":"00:00:50:056"}
+{"type":"While","desc":" ","info":"While contain:","details":"end of while statement","status":"OKAY","time":"00:00:50:056"}
+Pause 1000 1619610103 00:00:50:056
+{"type":"Number","desc":" ","info":"Number:Add num 1 ","details":"","status":"OKAY","time":"00:00:50:056"}
+{"type":"Var","desc":" ","info":"Var tempName picName ","details":"","status":"OKAY","time":"00:00:50:056"}
+{"type":"Var","desc":" ","info":"Var siName \"SystemInfo_\" ","details":"","status":"OKAY","time":"00:00:50:056"}
+{"type":"Var","desc":" ","info":"Var str \"\" ","details":"","status":"OKAY","time":"00:00:50:056"}
+{"type":"String","desc":" ","info":"String:Transform str num ","details":"","status":"OKAY","time":"00:00:50:056"}
+{"type":"String","desc":" ","info":"String:Append tempName str ","details":"","status":"OKAY","time":"00:00:50:057"}
+{"type":"String","desc":" ","info":"String:Append siName str ","details":"","status":"OKAY","time":"00:00:50:057"}
+{"type":"API","desc":"[device2] ","info":"File: #Error, API:DownloadSI temp siName  [device2]","details":"curl_easy_perform() failed: Timeout was reached","status":"ERROR","time":"00:01:00:068"}
+Pause 1000 1619610113 00:01:00:068
+{"type":"Var","desc":" ","info":"contain true ","details":"","status":"OKAY","time":"00:01:00:068"}
+{"type":"Screenshot","desc":"","info":"Capture from device2 c0:74:ad:2c:8b:3e current IP:192.168.77.61","details":"/picture/Error picture2","status":"OKAY","time":"00:01:02:164"}
+Pause 1000 1619610115 00:01:02:165
+{"type":"While","desc":" ","info":"While contain:","details":"start while statement","status":"OKAY","time":"00:01:02:165"}
+{"type":"CoreDump","desc":"","info":"c0:74:ad:2c:8b:3e not found core dump","details":"","status":"OKAY","time":"00:01:02:168"}
+{"type":"If","desc":" ","info":"If contain:","details":"false","status":"OKAY","time":"00:01:02:168"}
+{"type":"While","desc":" ","info":"While contain:","details":"end of while statement","status":"OKAY","time":"00:01:02:168"}
+Pause 1000 1619610115 00:01:02:168
+{"type":"Foreach","desc":" ","info":"Foreach deviceList as temp ","details":"start End of statement","status":"OKAY","time":"00:01:02:168"}
+Pause 900 1619610115 00:01:02:168
+{"type":"Foreach","desc":" ","info":"Foreach deviceList as temp ","details":"start Foreach statement","status":"OKAY","time":"00:01:03:068"}
+{"type":"API","desc":"[device1] ","info":"File: #Error, API:PhoneEnd temp  [device1]","details":"192.168.77.83 :: curl_easy_perform() failed: Timeout was reached","status":"ERROR","time":"00:01:23:070"}
+Pause 500 1619610136 00:01:23:080
+{"type":"API","desc":"[device1] ","info":"File: #Error, API:Reset temp  [device1]","details":"192.168.77.83 :: curl_easy_perform() failed: Timeout was reached","status":"ERROR","time":"00:01:43:581"}
+{"type":"API","desc":"[device2] ","info":"API:PhoneEnd temp ","details":"http://192.168.77.61/cgi-bin/api-phone_operation?passcode=123&cmd=endcall","status":"OKAY","time":"00:01:43:596"}
+Pause 500 1619610156 00:01:43:596
+{"type":"API","desc":"[device2] ","info":"API:Reset temp ","details":"http://192.168.77.61/cgi-bin/api-back_idle?passcode=123","status":"OKAY","time":"00:01:44:101"}
+{"type":"Foreach","desc":" ","info":"Foreach deviceList as temp ","details":"start End of statement","status":"OKAY","time":"00:01:44:101"}
+{"type":"If","desc":" ","info":"If error_flag:","details":"false","status":"OKAY","time":"00:01:44:101"}
+FAILED 00:01:44:105
