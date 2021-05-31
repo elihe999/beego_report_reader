@@ -38,6 +38,7 @@ func main() {
 	web.Router("/", &controllers.MainController{})
 	web.Router("/sip/", &controllers.SipController{})
 	web.Router("/device/", &controllers.DeviceController{})
+	web.Router("/device/:id", &controllers.DeviceController{}, "GET:ListDeviceStep")
 	web.Router("/userinfo/", &controllers.UserInfoController{})
 	web.SetStaticPath("/static", "static")
 	web.Run()

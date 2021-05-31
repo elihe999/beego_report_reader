@@ -33,15 +33,11 @@
         </header>
         <div class="panel panel-default">
             <div class="panel-body">
-                <ul class="list-group">
                 {{range $elem := .Files}}
-                    <li class="list-group-item">
-                        <a href="device/{{$elem}}">
-                            {{$elem}}
-                        </a>
-                    </li>
+                    <p>
+                        {{$elem}}
+                    </p>
                 {{end}}
-                </ul>
             </div>
         </div>
     </body>

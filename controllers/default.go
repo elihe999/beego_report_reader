@@ -23,7 +23,7 @@ type Result struct {
 	Time    string `json:"time"`
 }
 
-func ReadFile(path string) (details []string, err error) {
+func (c *MainController) ReadFile(path string) (details []string, err error) {
 	// open file
 	fi, err := os.Open(path)
 	if err != nil {
@@ -49,7 +49,7 @@ func ReadFile(path string) (details []string, err error) {
 }
 
 func (c *MainController) getResultText() {
-	content, err := ReadFile("./static/Result")
+	content, err := c.ReadFile("./static/Result")
 	if err != nil {
 		fmt.Println(err)
 	}
