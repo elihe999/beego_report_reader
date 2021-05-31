@@ -1,6 +1,6 @@
 # beego_report_reader
 
-
+This is a record about how to use Beego framework
 ## Bee
 ### Install
 
@@ -26,7 +26,7 @@ fmt.Println(this.Ctx.Request.Referer())
 ```
 输出：http://localhost:8080/swagger/
 
-获取当前uri，
+获取当前uri:
 
 ```go
 fmt.Println(this.Ctx.Request.RequestURI)
@@ -39,7 +39,6 @@ fmt.Println(this.Ctx.Request.RequestURI)
 fmt.Println(this.Ctx.Input.Query("longitude"))
 fmt.Println(this.Ctx.Input.Query("latitude"))
 ```
-
 ps:正常情况下，Query的key不应当以:开头，以免和Param里的key冲突
 
 获取path参数， 形如http://localhost:8080/userinfo/{uid}这种
