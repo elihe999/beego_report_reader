@@ -94,12 +94,26 @@ beego.Router("/staticblock/:key", &CMSController{}, "get:StaticBlock")
 beego.Router("/all/:key", &CMSController{}, "get:AllBlock")
 同时大家注意到新版本里面增加了 URLMapping 这个函数，这是新增加的函数，用户如果没有进行注册，那么就会通过反射来执行对应的函数，如果注册了就会通过 interface 来进行执行函数，性能上面会提升很多。
 
-## 参数
+### 参数
 
 c.GetString("id")
 c.GetBool("id")
 c.GetInt("id")
 c.GetStrings("id")
+
+## view
+
+go 统一使用了 {{ 和 }} 作为左右标签，没有其他的标签符号。如果您想要修改为其它符号，可以参考 模板标签。
+使用 . 来访问当前位置的上下文
+
+使用 $ 来引用当前模板根级的上下文
+
+使用 $var 来访问创建的变量
+```tpl
+
+```
+
+
 ## Issue
 
 panic: err: chdir : The system cannot find the file specified.: stderr:
