@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-
-	"github.com/beego/beego/v2/server/web"
 )
 
 type MscSipInfo struct {
@@ -21,7 +19,7 @@ type MscSipInfoSlice struct {
 }
 
 type SipController struct {
-	web.Controller
+	BaseController
 }
 
 func (this *SipController) Get() {
@@ -84,4 +82,9 @@ func (this *SipController) RemoveRepeatedElement(arr []string) (newArr []string)
 		}
 	}
 	return
+}
+
+func (c *SipController) GetSipContextDetail() {
+	sipContextId := c.Ctx.Input.Param(":id")
+	c.SuccessJson(sipContextId)
 }
