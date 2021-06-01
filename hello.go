@@ -38,8 +38,9 @@ func main() {
 	web.Router("/", &controllers.MainController{})
 	web.Router("/sip/", &controllers.SipController{})
 	web.Router("/device/", &controllers.DeviceController{})
+	web.Router("/device/:id", &controllers.DeviceController{}, "get:ListDeviceStep")
 	web.Router("/userinfo/", &controllers.UserInfoController{})
-	// web.Router("/sysinfo/:id:int", &controllers.TaskController{}, "get:GetTask;put:UpdateTask")
-	// web.Router("/device/:id:int", &controllers.TaskController{}, "get:GetTask;put:UpdateTask")
+	web.Router("/file/down/:id", &controllers.DeviceController{}, "get:FileDown")
+	web.SetStaticPath("/static", "static")
 	web.Run()
 }

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mscgen diagram</title>
     <script src="/static/mscgen-inpage.js" defer></script>
-    <script type="text/javascript" src="/public/js/axios.min.js"></script>
+    <script type="text/javascript" src="/static/axios.min.js"></script>
     <style>
         body,html {
             height: 100%;
@@ -71,7 +71,6 @@
                 var endX = e.clientX;
                 var moveLen = resize.left + (endX - startX)
                 var maxT = box.clientWidth - resize.offsetWidth
-
                 if (moveLen < 400) {
                     moveLen = 400
                 } else if (moveLen > (maxT-340)) {

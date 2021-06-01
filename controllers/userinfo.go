@@ -48,7 +48,8 @@ func (d *UserInfoController) getDeviceFileList(path string) []string {
 			return nil
 		}
 		if strings.Contains(path, "SystemInfo") {
-			temp = append(temp, path)
+			temppath := path[len("static\\"):]
+			temp = append(temp, temppath)
 		}
 		return nil
 	})
