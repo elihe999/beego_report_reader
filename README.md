@@ -121,6 +121,10 @@ this.ServeJSON()
 
 ## Issue
 
-panic: err: chdir : The system cannot find the file specified.: stderr:
+> panic: err: chdir : The system cannot find the file specified.: stderr:
 
-> 没有打包完整，go.mod
+>> 没有打包完整，go.mod
+
+
+> conversion from int to string yields a string of one rune, not a string of digits (did you mean fmt.Sprint(x)?)stringintconv
+

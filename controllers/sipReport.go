@@ -5,7 +5,10 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"strconv"
 )
+
+var sipReportName = "sipReport"
 
 type MscSipInfo struct {
 	Dest      string `json:"destination"`
@@ -31,8 +34,7 @@ func (this *SipController) Get() {
 
 func (this *SipController) ReadSipReport() (result []string) {
 	var details []string
-	fileName := "sipReport"
-	fi, err := os.Open("static\\" + fileName)
+	fi, err := os.Open("static\\" + sipReportName)
 	if err != nil {
 		fmt.Println("Failed to open")
 		fmt.Println(err)
@@ -42,14 +44,14 @@ func (this *SipController) ReadSipReport() (result []string) {
 	defer fi.Close()
 	// put json to struct
 	var MscContextBody MscSipInfoSlice
-	var sip_msc_children = "\"%s\"=>>\"%s\" [label=\"%s\", title=\"%s\", id=\"%d\", url=\"javascript:show('%d')\"];"
+	// var sip_msc_children = "\"%s\"=>>\"%s\" [label=\"%s\", title=\"%s\", id=\"%d\", url=\"javascript:show('%d')\"];"
 	nameList := make([]string, 0)
 	if err := json.Unmarshal([]byte(fileContext), &MscContextBody); err == nil {
 		for index, sipSignal := range MscContextBody.Data {
-			// fmt.Println(index)
+			// fmt.Println(fmt.Sprintf(sip_msc_children, sipSignal.Source, sipSignal.Dest, sipSignal.FirstLine, index, index))
 			nameList = append(nameList, "\""+sipSignal.Source+"\"")
 			nameList = append(nameList, "\""+sipSignal.Dest+"\"")
-			details = append(details, fmt.Sprintf(sip_msc_children, sipSignal.Source, sipSignal.Dest, sipSignal.FirstLine, sipSignal.FirstLine, index))
+			details = append(details, "\""+sipSignal.Source+"\"=>>\""+sipSignal.Dest+"\" [label=\""+sipSignal.FirstLine+"\", title=\""+strconv.Itoa(index)+"\", id=\""+strconv.Itoa(index)+"\", url=\"javascript:show('"+strconv.Itoa(index)+"')\"];")
 		}
 	} else {
 		// fmt.Println("getResultText:", err)
@@ -86,5 +88,28 @@ func (this *SipController) RemoveRepeatedElement(arr []string) (newArr []string)
 
 func (c *SipController) GetSipContextDetail() {
 	sipContextId := c.Ctx.Input.Param(":id")
-	c.SuccessJson(sipContextId)
+	fmt.Println(string(sipContextId))
+	var target string
+	fi, err := os.Open("static\\" + sipReportName)
+	if err != nil {
+		fmt.Println("Failed to open")
+		fmt.Println(err)
+	}
+	// read file
+	fileContext, err := ioutil.ReadAll(fi)
+	defer fi.Close()
+	// put json to struct
+	var MscContextBody MscSipInfoSlice
+	if err := json.Unmarshal([]byte(fileContext), &MscContextBody); err == nil {
+		for index, sipSignal := range MscContextBody.Data {
+			if strconv.Itoa(index) == sipContextId {
+				target = string(sipSignal.Content)
+				break
+			}
+			index = index + 1
+		}
+	} else {
+		// fmt.Println("getResultText:", err)
+	}
+	c.SuccessJson(target)
 }

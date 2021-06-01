@@ -120,10 +120,16 @@
             return false
         }
     }
-    //todo
     function show(a) {
         var pDiv = document.getElementById("showarea")
-        console.log("test")
+        axios.get("/sip/"+a)
+        .then(function(response) {
+            //console.log(response)
+            pDiv.innerHTML = response.data.Data
+        })
+        .catch(function(error) {
+            console.log(error)
+        })
     }
 </script>
 

@@ -37,7 +37,7 @@ func main() {
 	// web.Router("/", &MainController{})
 	web.Router("/", &controllers.MainController{})
 	web.Router("/sip/", &controllers.SipController{})
-	web.Router("/sip/:id", &controllers.SipController{}, "get:GetSipContextDetail")
+	web.Router("/sip/:id:string", &controllers.SipController{}, "get:GetSipContextDetail")
 	web.Router("/device/", &controllers.DeviceController{})
 	web.Router("/device/:id", &controllers.DeviceController{}, "get:ListDeviceStep")
 	web.Router("/userinfo/", &controllers.UserInfoController{})
