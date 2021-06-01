@@ -1,20 +1,23 @@
 package controllers
 
 import (
-	"bufio"
 	"encoding/json"
 	"fmt"
-	"io"
+	"io/ioutil"
 	"os"
 
 	"github.com/beego/beego/v2/server/web"
 )
 
 type MscSipInfo struct {
-	Desc      string `json:"destination"`
+	Dest      string `json:"destination"`
 	Source    string `json:"source"`
 	FirstLine string `json:"firstLine"`
 	Content   string `json:"content"`
+}
+
+type MscSipInfoSlice struct {
+	Data []MscSipInfo
 }
 
 type SipController struct {
@@ -29,7 +32,7 @@ func (this *SipController) Get() {
 	this.Render()
 }
 
-func (this *SipController) ReadSipReport() map[interface{}]interface{} {
+func (this *SipController) ReadSipReport() (result []string) {
 	var details []string
 	fileName := "sipReport"
 	fi, err := os.Open("static\\" + fileName)
@@ -37,29 +40,49 @@ func (this *SipController) ReadSipReport() map[interface{}]interface{} {
 		fmt.Println("Failed to open")
 		fmt.Println(err)
 	}
-	defer fi.Close()
 	// read file
-	buf := bufio.NewReader(fi)
-	for {
-		b, errR := buf.ReadBytes('\n')
-		if errR != nil {
-			if errR == io.EOF {
+	fileContext, err := ioutil.ReadAll(fi)
+	defer fi.Close()
+	// put json to struct
+	var MscContextBody MscSipInfoSlice
+	var sip_msc_children = "\"%s\"=>>\"%s\" [label=\"%s\", title=\"%s\", id=\"%d\", url=\"javascript:show('%d')\"];"
+	nameList := make([]string, 0)
+	if err := json.Unmarshal([]byte(fileContext), &MscContextBody); err == nil {
+		fmt.Println(MscContextBody)
+		for index, sipSignal := range MscContextBody.Data {
+			nameList = append(nameList, "\""+sipSignal.Source+"\"")
+			nameList = append(nameList, "\""+sipSignal.Dest+"\"")
+			details = append(details, fmt.Sprintf(sip_msc_children, sipSignal.Source, sipSignal.Dest, sipSignal.FirstLine, sipSignal.FirstLine, index))
+		}
+	} else {
+		// fmt.Println("getResultText:", err)
+	}
+	nameList = this.RemoveRepeatedElement(nameList)
+	var tempNameStr string
+	for _, name := range nameList {
+		tempNameStr = tempNameStr + name + ","
+	}
+	tempNameStr = tempNameStr[0 : len(tempNameStr)-1]
+	result = append(result, tempNameStr+";\n")
+	result = append(result, "|||;\n")
+	result = append(result, details...)
+	result = append(result, "|||;\n")
+	return
+}
+
+func (this *SipController) RemoveRepeatedElement(arr []string) (newArr []string) {
+	newArr = make([]string, 0)
+	for i := 0; i < len(arr); i++ {
+		repeat := false
+		for j := i + 1; j < len(arr); j++ {
+			if arr[i] == arr[j] {
+				repeat = true
 				break
 			}
-			fmt.Println(errR.Error())
 		}
-		details = append(details, string(b))
-	}
-
-	var MscContext MscSipInfo
-	mscInterface := make(map[interface{}]interface{})
-	for index, value := range details {
-		if err := json.Unmarshal([]byte(value), &MscContext); err == nil {
-			mscInterface[index] = MscContext
-			fmt.Println(MscContext)
-		} else {
-			// fmt.Println("getResultText:", err)
+		if !repeat {
+			newArr = append(newArr, arr[i])
 		}
 	}
-	return mscInterface
+	return
 }
