@@ -123,14 +123,7 @@
     //todo
     function show(a) {
         var pDiv = document.getElementById("showarea")
-        axios.get(")
-        .then(function(response) {
-            console.log(response.data[a])
-            pDiv.innerHTML = response.data[a].desc
-        })
-        .catch(function(error) {
-            console.log(error)
-        })
+        console.log("test")
     }
 </script>
 

@@ -26,7 +26,6 @@ type SipController struct {
 
 func (this *SipController) Get() {
 	mscbody := this.ReadSipReport()
-	fmt.Println(mscbody)
 	this.Data["mscbody"] = mscbody
 	this.TplName = "sip/index.tpl"
 	this.Render()
@@ -48,8 +47,8 @@ func (this *SipController) ReadSipReport() (result []string) {
 	var sip_msc_children = "\"%s\"=>>\"%s\" [label=\"%s\", title=\"%s\", id=\"%d\", url=\"javascript:show('%d')\"];"
 	nameList := make([]string, 0)
 	if err := json.Unmarshal([]byte(fileContext), &MscContextBody); err == nil {
-		fmt.Println(MscContextBody)
 		for index, sipSignal := range MscContextBody.Data {
+			// fmt.Println(index)
 			nameList = append(nameList, "\""+sipSignal.Source+"\"")
 			nameList = append(nameList, "\""+sipSignal.Dest+"\"")
 			details = append(details, fmt.Sprintf(sip_msc_children, sipSignal.Source, sipSignal.Dest, sipSignal.FirstLine, sipSignal.FirstLine, index))

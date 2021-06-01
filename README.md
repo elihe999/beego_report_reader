@@ -112,7 +112,12 @@ go 统一使用了 {{ 和 }} 作为左右标签，没有其他的标签符号。
 ```tpl
 
 ```
+## 响应
 
+```go
+this.Data["json"] = json
+this.ServeJSON()
+```
 
 ## Issue
 
