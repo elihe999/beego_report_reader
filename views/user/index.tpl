@@ -14,7 +14,7 @@
                     <div class="hero-text">
                         <h1>System Infomation</h1>
                         <p class="description">
-
+                            Download System Infomation
                         </p>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                 <ul class="list-group">
                 {{range $index,$elem := .Files}}
                     <li class="list-group-item">
-                        <a download="" href="device/{{$elem}}">
+                        <a download="" href="/file/down/{{$elem}}">
                             {{$elem}}
                         </a>
                     </li>

@@ -43,7 +43,8 @@ func (d *DeviceController) getDeviceFileList(path string) []string {
 			return nil
 		}
 		if strings.Contains(path, "testSteps.txt") {
-			temp = append(temp, path)
+			temppath := path[len("static\\"):]
+			temp = append(temp, temppath)
 		}
 		return nil
 	})
@@ -57,7 +58,7 @@ func (d *DeviceController) getDeviceFileList(path string) []string {
 
 func (c *DeviceController) ReadFile(path string) (details []string, err error) {
 	// open file
-	fi, err := os.Open(path)
+	fi, err := os.Open("static\\" + path)
 	if err != nil {
 		fmt.Println("Failed to open")
 		fmt.Println(err)
@@ -78,4 +79,9 @@ func (c *DeviceController) ReadFile(path string) (details []string, err error) {
 		details = append(details, string(b))
 	}
 	return details, err
+}
+
+func (c *DeviceController) FileDown() {
+	name := c.Ctx.Input.Param(":id")
+	c.Ctx.Output.Download("static/" + name)
 }

@@ -25,7 +25,6 @@ func openBrowser(url string) error {
 }
 
 func main() {
-	// beego.AppConfig.String("dev::httpport")
 	openBrowser("http://localhost:8888")
 	web.InsertFilter("*", web.BeforeRouter, cors.Allow(&cors.Options{
 		AllowAllOrigins:  true,
@@ -37,9 +36,11 @@ func main() {
 	// web.Router("/", &MainController{})
 	web.Router("/", &controllers.MainController{})
 	web.Router("/sip/", &controllers.SipController{})
+	web.Router("/sip/:id:string", &controllers.SipController{}, "get:GetSipContextDetail")
 	web.Router("/device/", &controllers.DeviceController{})
+	web.Router("/device/:id", &controllers.DeviceController{}, "get:ListDeviceStep")
 	web.Router("/userinfo/", &controllers.UserInfoController{})
-	// web.Router("/sysinfo/:id:int", &controllers.TaskController{}, "get:GetTask;put:UpdateTask")
-	// web.Router("/device/:id:int", &controllers.TaskController{}, "get:GetTask;put:UpdateTask")
+	web.Router("/file/down/:id", &controllers.DeviceController{}, "get:FileDown")
+	web.SetStaticPath("/static", "static")
 	web.Run()
 }
