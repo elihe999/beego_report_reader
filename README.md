@@ -122,13 +122,17 @@ this.ServeJSON()
 
 ## Issue
 
-> panic: err: chdir : The system cannot find the file specified.: stderr:
+1) panic: err: chdir : The system cannot find the file specified.: stderr:
 
->> 没有打包完整，go.mod
+> 没有打包完整，go.mod
 
 
-> conversion from int to string yields a string of one rune, not a string of digits (did you mean fmt.Sprint(x)?)stringintconv
+2) conversion from int to string yields a string of one rune, not a string of digits (did you mean fmt.Sprint(x)?)stringintconv
 
 > slice 问题 slice bounds out of range
 
 >> sipReport.go :64
+
+3) go module init
+
+> 

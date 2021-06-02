@@ -25,7 +25,6 @@ func openBrowser(url string) error {
 }
 
 func main() {
-	// beego.AppConfig.String("dev::httpport")
 	openBrowser("http://localhost:8888")
 	web.InsertFilter("*", web.BeforeRouter, cors.Allow(&cors.Options{
 		AllowAllOrigins:  true,
