@@ -1,12 +1,14 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <title>Mscgen diagram</title>
-    <script src="/static/mscgen-inpage.js" defer></script>
-    <script type="text/javascript" src="/static/axios.min.js"></script>
+    <script src="/public/js/mscgen-inpage.js" defer></script>
+    <link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="/public/js/axios.min.js"></script>
+    <link href="/public/css/font-awesome.min.css" rel="stylesheet" />
     <style>
         body,html {
             height: 100%;
@@ -42,39 +44,16 @@
     </style>
 </head>
 <body>
-    <header class="hero-unit" style="background-color:#A9F16C">
-        <div class="container">
-            <div class="row">
-                <div class="hero-text">
-                    <h1>Report</h1>
-                    <p class="description">
-                        Test Case Result
-                    </p>
-                </div>
-            </div>
-            <nav class="navbar navbar-default" role="navigation"> 
-                <div class="container-fluid">
-                    <div class="navbar-header"> 
-                        <a class="navbar-brand" href="/">Report</a> 
-                    </div> 
-                    <ul class="nav navbar-nav navbar-right"> 
-                        <li><a href="sip"><span class="glyphicon glyphicon-file"></span> SIP</a></li> 
-                        <li><a href="device"><span class="glyphicon  glyphicon-folder-open"></span> Device</a></li> 
-                        <li><a href="userinfo"><span class="glyphicon glyphicon-wrench"></span> userinfo</a></li> 
-                    </ul>
-                </div> 
-            </nav>
-        </div>
-    </header>
     <div id="box">
         <div id="left">
             <pre id="mscremote" class="mscgen_js" style="max-height: 850px;">
                 msc {
-                    wordwraparcs="true";
-                    {{range $elem := .mscbody}}
-                        {{$elem}}
-                    {{end}}
-                }
+                <?php
+                    foreach ($sip_dia_array as $value) {
+                        echo $value;
+                    }
+                ?>
+                    }
             </pre>
         </div>
         <div id="resize"></div>
@@ -85,7 +64,7 @@
     </div>
 </body>
 <script>
-    var path = "11"
+    var path = "<?php echo $path; ?>"
     window.onload = function () {
         var resize = document.getElementById("resize")
         var left = document.getElementById("left")
@@ -99,6 +78,7 @@
                 var endX = e.clientX;
                 var moveLen = resize.left + (endX - startX)
                 var maxT = box.clientWidth - resize.offsetWidth
+
                 if (moveLen < 400) {
                     moveLen = 400
                 } else if (moveLen > (maxT-340)) {
@@ -122,10 +102,10 @@
     }
     function show(a) {
         var pDiv = document.getElementById("showarea")
-        axios.get("/sip/"+a)
+        axios.get("/index.php/Review/return_detail_sip?p=" + path)
         .then(function(response) {
-            //console.log(response)
-            pDiv.innerHTML = response.data.Data
+            console.log(response.data[a])
+            pDiv.innerHTML = response.data[a].desc
         })
         .catch(function(error) {
             console.log(error)

@@ -97,6 +97,7 @@ beego.Router("/all/:key", &CMSController{}, "get:AllBlock")
 
 ### 参数
 
+
 c.GetString("id")
 c.GetBool("id")
 c.GetInt("id")
@@ -135,4 +136,3 @@ this.ServeJSON()
 
 3) go module init
 
-> 
