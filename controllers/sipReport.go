@@ -58,14 +58,17 @@ func (this *SipController) ReadSipReport() (result []string) {
 	}
 	nameList = this.RemoveRepeatedElement(nameList)
 	var tempNameStr string
+	tempNameStr = ""
 	for _, name := range nameList {
 		tempNameStr = tempNameStr + name + ","
 	}
-	tempNameStr = tempNameStr[0 : len(tempNameStr)-1]
-	result = append(result, tempNameStr+";\n")
-	result = append(result, "|||;\n")
-	result = append(result, details...)
-	result = append(result, "|||;\n")
+	if len(tempNameStr) != 0 {
+		tempNameStr = tempNameStr[0 : len(tempNameStr)-1]
+		result = append(result, tempNameStr+";\n")
+		result = append(result, "|||;\n")
+		result = append(result, details...)
+		result = append(result, "|||;\n")
+	}
 	return
 }
 

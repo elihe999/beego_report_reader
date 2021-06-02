@@ -21,6 +21,7 @@ bee pack -be GOOS=windows
 
 > 以下都全默认在controller下执行
 获取当前请求的referer
+
 ```go
 fmt.Println(this.Ctx.Request.Referer())
 ```
@@ -128,3 +129,6 @@ this.ServeJSON()
 
 > conversion from int to string yields a string of one rune, not a string of digits (did you mean fmt.Sprint(x)?)stringintconv
 
+> slice 问题 slice bounds out of range
+
+>> sipReport.go :64

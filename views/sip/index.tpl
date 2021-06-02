@@ -55,7 +55,7 @@
             <nav class="navbar navbar-default" role="navigation"> 
                 <div class="container-fluid">
                     <div class="navbar-header"> 
-                        <a class="navbar-brand" href="#">Report</a> 
+                        <a class="navbar-brand" href="/">Report</a> 
                     </div> 
                     <ul class="nav navbar-nav navbar-right"> 
                         <li><a href="sip"><span class="glyphicon glyphicon-file"></span> SIP</a></li> 
