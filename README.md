@@ -4,6 +4,8 @@ This is a record about how to use Beego framework
 ## Bee
 ### Install
 
+> go get github.com/beego/beego/v2@v2.0.0
+
 ### Run
 
 ```
